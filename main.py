@@ -26,6 +26,8 @@ class ISCFFormatter:
     def read_path(self):
         path = self.input
         for f in os.listdir(path):
+            if f.split(".")[1] == "ignore":
+                continue
             self.excel_manager.open_file(f)
             self.read_file(f"{path}\\{f}")
             self.excel_manager.close_file()
