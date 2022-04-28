@@ -35,6 +35,7 @@ class ISCFFormatter:
     def read_file(self, file):
         title = ""
         with open(file, 'r') as f:
+            print(f"Processing file: {file}")
             for line in f:
                 if self.begin_flag in line:
                     if self.opened_bracket:
